@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ClassePrincipal {
 
 	public static void main(String[] args) {
-		// Classe principal
+		// Todas as questões estão inseridas diretamente na classe principal.
 		
 
 		
@@ -33,6 +33,11 @@ public class ClassePrincipal {
 		
 		int altura = entrada.nextInt();
 		
+		System.out.println("\n");
+		System.out.println("-------------------------------------");
+		System.out.println("Você digitou o número: " + altura);
+		System.out.println("-------------------------------------");
+		
 		System.out.println("Reposta da Solução 1:");		
 		
 		for (int i = 0; i < altura; i++) {
@@ -46,108 +51,195 @@ public class ClassePrincipal {
 		System.out.println("\n\n");
 		
 		while (true) {
-			System.out.println("-------------------------------------");
-			System.out.println("Digite c p/ continuar?:");
+			System.out.println("------------------------------------------------------------------------------------------------------------------");
+			System.out.println("Vamos ao Enunciado e solução da 2º Questão. - Digite c p/ continuar?:");
 			String continuar = entrada.next().toUpperCase();
 			
 			if (continuar.equals("C")) {
 				break;
 			}else {
-				System.out.println("-------------------------------------");
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
 				System.out.println("Valor inválido:");
 			}
 			
 		}
 		
-		System.out.println("--------------------------------------------------------------------------------------------------------");
-		System.out.println("---------------------------------------| ENUNCIADO QUESTÃO 2  | ----------------------------------------");
-		System.out.println("--------------------------------------------------------------------------------------------------------");
-		
-		System.out.println("\n");
-		System.out.println("Débora se inscreveu em uma rede social para se manter em contato com seus amigos. A página de cadastro \nexigia o preenchimento dos campos de nome e senha, porém a senha precisa ser forte. O site considera uma \nsenha forte quando ela satisfaz os seguintes critérios:");
-		System.out.println("\n");
-		System.out.println("Possui no mínimo 6 caracteres.\r\n"
-				+ "Contém no mínimo 1 digito.\r\n"
-				+ "Contém no mínimo 1 letra em minúsculo.\r\n"
-				+ "Contém no mínimo 1 letra em maiúsculo.\r\n"
-				+ "Contém no mínimo 1 caractere especial. Os caracteres especiais são: !@#$%^&*()-+");
-		System.out.println("\n\n");
-		System.out.println("--------------------------------------------------------------------------------------------------------");
-		System.out.println("----------------------------------------| SOLUÇÃO QUESTÃO 2  | -----------------------------------------");
-		System.out.println("--------------------------------------------------------------------------------------------------------");
-		
-		
+		while (true) {
+			System.out.println("--------------------------------------------------------------------------------------------------------");
+			System.out.println("---------------------------------------| ENUNCIADO QUESTÃO 2  | ----------------------------------------");
+			System.out.println("--------------------------------------------------------------------------------------------------------");
+			
+			System.out.println("\n");
+			System.out.println("Débora se inscreveu em uma rede social para se manter em contato com seus amigos. A página de cadastro \nexigia o preenchimento dos campos de nome e senha, porém a senha precisa ser forte. O site considera uma \nsenha forte quando ela satisfaz os seguintes critérios:");
+			System.out.println("\n");
+			System.out.println("Possui no mínimo 6 caracteres.\r\n"
+					+ "Contém no mínimo 1 digito.\r\n"
+					+ "Contém no mínimo 1 letra em minúsculo.\r\n"
+					+ "Contém no mínimo 1 letra em maiúsculo.\r\n"
+					+ "Contém no mínimo 1 caractere especial. Os caracteres especiais são: !@#$%^&*()-+");
+			System.out.println("\n\n");
+			System.out.println("--------------------------------------------------------------------------------------------------------");
+			System.out.println("----------------------------------------| SOLUÇÃO QUESTÃO 2  | -----------------------------------------");
+			System.out.println("--------------------------------------------------------------------------------------------------------");
+			
+			
 
-		
-		System.out.println("Digite uma senha a ser cadastrada?:");
-		//System.out.println("Digite sua senha");
-		
-		String senha = entrada.next();
-		
-		//String senha = JOptionPane.showInputDialog("Digite sua senha");
+			
+			System.out.println("Digite uma senha a ser cadastrada?:");
 
-		if (temSeis(senha) == false) {
-		} 
-		else if (temMaiuscula(senha) == false) {
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-			System.out.println("[X]Sua senha não tem uma letra maiúscula. É necessário acrescentar!");
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-		} 
-		else if (temMinuscula(senha) == false) {
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-			System.out.println("[X]Sua senha não tem uma letra minúscula. É necessário acrescentar!");
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-		} 
-		else if (temDigito(senha) == false) {
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-			System.out.println("[X]Sua senha falta um dígito. É necessário acrescentar!");
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-		} 
-		else if (temEspecial(senha) == false) {
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-			System.out.println("[X]Sua senha não tem um caractere especial. É necessário acrescentar!");
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-		} 
-		else {
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-			System.out.println("[OK]Parabéns !. Sua senha segue todos os padrões exigidos! [SENHA FORTE].");
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-		}
+			
+			String senha = entrada.next();
+			
+			System.out.println("\n");
+			System.out.println("-------------------------------------");
+			System.out.println("Você digitou a senha: " + senha);
+			System.out.println("-------------------------------------");
+			
+			
 
-	}
-
-	static boolean temSeis(String senha) {
-		
-		// Verifica se a string senha é maior que 6, se não conta quantos caracteres faltam.
-		if (senha.length() < 6) {
-			int resultado = 6 - senha.length();
-			//System.out.println(resultado);
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-			System.out.println("[X]Sua senha não pode ter menos que 6 caracteres.");
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-			System.out.println("Acrescente " + resultado + " caractere entre letras maiúscula, minúscula, e números para que sua senha seja forte.");
-			System.out.println("------------------------------------------------------------------------------------------------------------------");
-			//return false;
-		}
-		return true;
-	}
-
-	static boolean temMaiuscula(String senha) {
-		// 
-		int cont = 0;
-		for (int i = 0; i < senha.length(); i++) {
-			if (!Character.isUpperCase(senha.charAt(i))) {
-				cont++;
-				if (cont == senha.length()) {
-					return false;
-				}
+			if (temSeis(senha) == false) {
+			} 
+			else if (Maiuscula(senha) == false) {
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+				System.out.println("[X]Sua senha não tem uma letra maiúscula. É necessário acrescentar!");
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+			} 
+			else if (Minuscula(senha) == false) {
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+				System.out.println("[X]Sua senha não tem uma letra minúscula. É necessário acrescentar!");
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+			} 
+			else if (Digito(senha) == false) {
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+				System.out.println("[X]Sua senha falta um dígito. É necessário acrescentar!");
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+			} 
+			else if (Especial(senha) == false) {
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+				System.out.println("[X]Sua senha não tem um caractere especial. É necessário acrescentar!");
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+			} 
+			else {
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+				System.out.println("[OK]Parabéns !. Sua senha segue todos os padrões exigidos! [SENHA FORTE].");
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+				System.out.println("\n");
+				break;
 			}
+			
+			
+			while (true) {
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+				System.out.println("É necessário que você cadastre uma senha FORTE - Digite c p/ continuar?:");
+				String continuar = entrada.next().toUpperCase();
+				
+				if (continuar.equals("C")) {
+					break;
+				}else {
+					System.out.println("------------------------------------------------------------------------------------------------------------------");
+					System.out.println("Valor inválido:");
+				}
+				
+			}
+
 		}
+		
+		
+		System.out.println("\n");
+		System.out.println("------------------------------------------| FIM QUESTÃO 2  | -------------------------------------------");
+		System.out.println("\n\n");
+		
+		
+		while (true) {
+			System.out.println("------------------------------------------------------------------------------------------------------------------");
+			System.out.println("Vamos ao Enunciado e solução da 3º Questão. - Digite c p/ continuar?:");
+			String continuar = entrada.next().toUpperCase();
+			
+			if (continuar.equals("C")) {
+				break;
+			}else {
+				System.out.println("------------------------------------------------------------------------------------------------------------------");
+				System.out.println("Valor inválido:");
+			}
+			
+		}
+		
+		
+		System.out.println("--------------------------------------------------------------------------------------------------------");
+		System.out.println("---------------------------------------| ENUNCIADO QUESTÃO 3  | ----------------------------------------");
+		System.out.println("--------------------------------------------------------------------------------------------------------");
+		System.out.println("\n");
+		System.out.println("Duas palavras podem ser consideradas anagramas de si mesmas se as letras de uma palavra podem ser \nrealocadas para formar a outra palavra. Dada uma string qualquer, desenvolva um algoritmo que encontre o número \nde pares de substrings que são anagramas.\r\n"
+				+ "Exemplo:\r\n"
+				+ "Exemplo 1)\r\n"
+				+ "Entrada:\r\n"
+				+ "ovo\r\n"
+				+ "\r\n"
+				+ "\r\n"
+				+ "Saída:\r\n"
+				+ "3\r\n"
+				+ "\r\n"
+				+ "\r\n"
+				+ "Explicação:\r\n"
+				+ "A lista de todos os anagramas pares são: [o, o], [ov, vo] que estão nas posições \n[[0, 2], [0, 1], [1, 2]] respectivamente. \r\n"
+				+ "");
+		
+		System.out.println("Exemplo 2)\r\n"
+				+ "Entrada:\r\n"
+				+ "ifailuhkqq\r\n"
+				+ "\r\n"
+				+ "\r\n"
+				+ "Saída:\r\n"
+				+ "3\r\n"
+				+ "\r\n"
+				+ "\r\n"
+				+ "Explicação:\r\n"
+				+ "A lista de todos os anagramas pares são: [i, i], [q, q] e [ifa, fai] que estão nas posições \n[[0, 3]], [[8, 9]] e [[0, 1, 2], [1, 2, 3]].\r\n"
+				+ "");
+		
+		System.out.println("\n");
+		System.out.println("--------------------------------------------------------------------------------------------------------");
+		System.out.println("----------------------------------------| SOLUÇÃO QUESTÃO 3  | -----------------------------------------");
+		System.out.println("--------------------------------------------------------------------------------------------------------");
+		
 
-		return true;
+		System.out.println("\n");
+		
+		System.out.println("Digite uma Palavra?:");
+		
+		
+		
+		String palavra = entrada.next();
+		
+		System.out.println("-------------------------------------");
+		System.out.println("Você digitou a senha: " + palavra);
+		System.out.println("-------------------------------------");
+		
+		System.out.println("Reposta da Solução 3:");
+		
+		String convertPalvra =  Integer.toString(anagramas(palavra));
+		
+		System.out.println(convertPalvra);
+
+		
+		System.out.println("\n");
+		System.out.println("\n");
+		System.out.println("------------------------------------------| FIM QUESTÃO 3  | -------------------------------------------");
+		System.out.println("\n\n");
+		
+		
+				
+		System.out.println("--------------------------------------------------------------------------------------------------------");
+		System.out.println("----------------------------------------- | FIM DOS DESAFIOS | -----------------------------------------");
+		System.out.println("--------------------------------------------------------------------------------------------------------");
+		System.out.println("\n");
+
+		
+
 	}
+	
 
-	static boolean temMinuscula(String senha) {
+	private static boolean Minuscula(String senha) {
 
 		int cont = 0;
 		for (int i = 0; i < senha.length(); i++) {
@@ -161,7 +253,19 @@ public class ClassePrincipal {
 		return true;
 	}
 
-	static boolean temDigito(String senha) {
+	private static boolean Especial(String senha) {
+		for (int i = 0; i < senha.length(); i++) {
+			if (senha.contains("!") || senha.contains("@") || senha.contains("#") || senha.contains("$")
+					|| senha.contains("%") || senha.contains("^") || senha.contains("&") || senha.contains("*")
+					|| senha.contains("(") || senha.contains(")") || senha.contains("-") || senha.contains("+")) {
+				return true;
+			}
+		}
+		return false;
+
+	}
+
+	private static boolean Digito(String senha) {
 		int cont = 0;
 		for (int i = 0; i < senha.length(); i++) {
 			if (!Character.isDigit(senha.charAt(i))) {
@@ -174,24 +278,82 @@ public class ClassePrincipal {
 		return true;
 	}
 
-	static boolean temEspecial(String senha) {
+	private static boolean Maiuscula(String senha) {
+		int cont = 0;
 		for (int i = 0; i < senha.length(); i++) {
-			if (senha.contains("!") || senha.contains("@") || senha.contains("#") || senha.contains("$")
-					|| senha.contains("%") || senha.contains("^") || senha.contains("&") || senha.contains("*")
-					|| senha.contains("(") || senha.contains(")") || senha.contains("-") || senha.contains("+")) {
-				return true;
+			if (!Character.isUpperCase(senha.charAt(i))) {
+				cont++;
+				if (cont == senha.length()) {
+					return false;
+				}
 			}
 		}
-		return false;
-		
-		
-		
-		
-
-	    
-		
-		
-		//System.out.println("FIM SEGUNDO BLOCO");
+		return true;
 	}
 
+	private static boolean temSeis(String senha) {
+		
+		if (senha.length() < 6) {
+			int resultado = 6 - senha.length();
+
+			System.out.println("------------------------------------------------------------------------------------------------------------------");
+			System.out.println("[X]Sua senha não pode ter menos que 6 caracteres. [No momento sua senha é considerada: FRACA!]");
+			System.out.println("------------------------------------------------------------------------------------------------------------------");
+			System.out.println("Acrescente ao menos " + resultado + " caractere's entre letras maiúscula, minúscula, caractere especial e números para que sua \nsenha seja FORTE.");
+			System.out.println("------------------------------------------------------------------------------------------------------------------");
+			//return false;
+		}
+		return true;
+	}
+	
+	static int anagramas(String palavra) {
+		int anagramas = 0;
+		int cont = 0;
+		
+		// Conversão para array de char
+		
+		char[] array = palavra.toCharArray();
+
+		for (int i = 0; i < array.length; i++) {
+			String pos1 = Character.toString(array[i]);
+			char posicao1 = pos1.charAt(0);
+			cont = 0;
+			for (int j = 0; j < array.length; j++) {
+				String pos2 = Character.toString(array[j]);
+				char posicao2 = pos2.charAt(0);
+				
+				// Só add no contador se a posição 1 for igual o da posição 2
+				
+				if (posicao1 == posicao2) {
+				cont++;
+				}
+				
+				
+				
+				
+				
+				if(cont >= 2) {
+					anagramas++;
+					cont = 0;
+					
+					
+					
+					if (i + 1 != j) {
+						anagramas++;
+					}
+				}
+				
+			}
+		}
+		
+		
+		
+		return anagramas/2;
+	}
+
+	
+	
+
 }
+
+
