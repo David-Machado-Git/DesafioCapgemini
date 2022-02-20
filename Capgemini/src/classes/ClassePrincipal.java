@@ -212,7 +212,7 @@ public class ClassePrincipal {
 		String palavra = entrada.next();
 		
 		System.out.println("-------------------------------------");
-		System.out.println("Você digitou a senha: " + palavra);
+		System.out.println("Você digitou a palavra: " + palavra);
 		System.out.println("-------------------------------------");
 		
 		System.out.println("Reposta da Solução 3:");
