@@ -4,3 +4,5 @@ Primeiramente procurei seguir os critérios solicitado para a avaliação segund
 
 
 INSTRUÇÕES PARA RODAR A APLICAÇÃO:De Igual modo para facilitar o entendimento e para manter a objetividade, fiz com que o programa e as questãos estejam todos na classe principal, seguidos de seus enunciados e acompanhados de suas soluções. Sendo assim; a aplicação encontra-se funcionando perfeitamente e atendendo os requisitos em modo terminal.
+
+O CAMINHO PARA ACESSAR O ARQUIVO DA CLASSE PRINCIPAL ESTÁ NA PASTA ACIMA COM O NOME: DESAFIOCAPGEMINI, OU NO LINK AS SEGUIR: https://github.com/David-Machado-Git/DesafioCapgemini/blob/main/Capgemini/src/classes/ClassePrincipal.java
